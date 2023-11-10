@@ -4,25 +4,25 @@
 }
 
 <table class="table table-bordered table-hover">
-            <tr>
-                <th scope="col">Brand ID</th>
-                <th scope="col">Brand Name</th>
-            </tr>
-        </thead>
-        @if (Model != null)
+    <tr>
+        <th scope="col">Brand ID</th>
+        <th scope="col">Brand Name</th>
+    </tr>
+    </thead>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
         {
-            @foreach (var item in Model)
-            {
-                <tbody>
-                    <tr>
-                        <th scope="row">@item.BrandID</th>
-                        <td>@item.BrandName</td>
-                    </tr>
-                </tbody>
-            }
+            <tbody>
+                <tr>
+                    <th scope="row">@item.BrandID</th>
+                    <td>@item.BrandName</td>
+                </tr>
+            </tbody>
         }
-        else
-        {
-            <p>The model is null.</p>
-        }
-    </table>
+    }
+    else
+    {
+        <p>The model is null.</p>
+    }
+</table>
